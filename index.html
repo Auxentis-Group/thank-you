@@ -6,75 +6,124 @@
 <title>Thank You | Auxentis Group</title>
 
 <style>
+
 :root{
   --bg:#070707;
-  --card: rgba(0,0,0,0.35);
-  --border: rgba(255,255,255,0.14);
+  --card:rgba(0,0,0,0.40);
+  --border:rgba(255,255,255,0.14);
   --text:#ffffff;
-  --muted: rgba(255,255,255,0.78);
+  --muted:rgba(255,255,255,0.78);
   --accent:#e10613;
 }
-*{ box-sizing:border-box; }
+
+*{
+box-sizing:border-box;
+}
+
 body{
-  margin:0;
-  min-height:100vh;
-  font-family: Arial, Helvetica, sans-serif;
-  color:var(--text);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:48px 18px;
-  background:
-    radial-gradient(900px 520px at 50% 15%, rgba(225,6,19,0.18), transparent 58%),
-    radial-gradient(900px 620px at 50% 115%, rgba(255,255,255,0.05), transparent 62%),
-    var(--bg);
+margin:0;
+min-height:100vh;
+font-family:Arial, Helvetica, sans-serif;
+color:var(--text);
+display:flex;
+align-items:center;
+justify-content:center;
+padding:48px 18px;
+background:
+radial-gradient(900px 520px at 50% 15%, rgba(225,6,19,0.18), transparent 58%),
+radial-gradient(900px 620px at 50% 115%, rgba(255,255,255,0.05), transparent 62%),
+var(--bg);
 }
-.wrap{ width:100%; max-width:860px; text-align:center; }
+
+.wrap{
+width:100%;
+max-width:860px;
+text-align:center;
+}
+
 .card{
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 44px 26px;
-  box-shadow: 0 22px 70px rgba(0,0,0,0.65);
-  backdrop-filter: blur(10px);
+background:var(--card);
+border:1px solid var(--border);
+border-radius:18px;
+padding:44px 26px;
+box-shadow:0 22px 70px rgba(0,0,0,0.65);
+backdrop-filter:blur(10px);
 }
+
 .logo{
-  width: 250px;
-  max-width: 85%;
-  height: auto;
-  display:block;
-  margin: 0 auto 18px auto;
-  filter:
-    drop-shadow(0 18px 40px rgba(0,0,0,0.75))
-    drop-shadow(0 0 26px rgba(225,6,19,0.18));
+width:250px;
+max-width:85%;
+height:auto;
+display:block;
+margin:0 auto 18px auto;
+filter:
+drop-shadow(0 18px 40px rgba(0,0,0,0.75))
+drop-shadow(0 0 26px rgba(225,6,19,0.18));
 }
+
 .divider{
-  width: 86px;
-  height: 4px;
-  background: var(--accent);
-  margin: 18px auto 26px auto;
-  border-radius: 999px;
+width:86px;
+height:4px;
+background:var(--accent);
+margin:18px auto 26px auto;
+border-radius:999px;
 }
+
 h1{
-  margin:0 0 10px 0;
-  font-size: 42px;
-  letter-spacing: 0.4px;
+margin:0 0 12px 0;
+font-size:42px;
+letter-spacing:0.4px;
 }
+
 p{
-  margin:10px auto 0 auto;
-  max-width: 640px;
-  font-size: 18px;
-  line-height: 1.55;
-  color: var(--muted);
+margin:10px auto;
+max-width:640px;
+font-size:18px;
+line-height:1.55;
+color:var(--muted);
 }
+
+.cta{
+margin-top:24px;
+font-size:20px;
+font-weight:600;
+}
+
+.phone{
+color:#ffffff;
+text-decoration:none;
+border-bottom:2px solid var(--accent);
+padding-bottom:2px;
+}
+
+.phone:hover{
+color:#ff4d4d;
+}
+
 @media (max-width:480px){
-  .card{ padding: 34px 18px; }
-  h1{ font-size: 34px; }
-  p{ font-size: 16px; }
+
+.card{
+padding:34px 18px;
 }
+
+h1{
+font-size:34px;
+}
+
+p{
+font-size:16px;
+}
+
+.cta{
+font-size:18px;
+}
+
+}
+
 </style>
 
-<!-- Meta Pixel (Lead only when ?lead=true) -->
+<!-- Meta Pixel -->
+
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -85,15 +134,13 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('init', '1627935951552384');
+fbq('init','1627935951552384');
 
-// Only count a Lead if Jobber redirected with ?lead=true
-(function () {
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('lead') === 'true') {
-    fbq('track', 'Lead');
-  }
-})();
+const params = new URLSearchParams(window.location.search);
+
+if(params.get('lead') === 'true'){
+  fbq('track','Lead');
+}
 </script>
 
 <noscript>
@@ -104,15 +151,31 @@ src="https://www.facebook.com/tr?id=1627935951552384&ev=Lead&noscript=1"/>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="card">
-      <img class="logo" src="auxentis-logo.png" alt="Auxentis Group">
-      <div class="divider"></div>
 
-      <h1>Thank You</h1>
-      <p>Your request has been successfully submitted.</p>
-      <p>A member of our team will contact you shortly to work on your estimate.</p>
-    </div>
-  </div>
+<div class="wrap">
+
+<div class="card">
+
+<img class="logo" src="auxentis-logo.png" alt="Auxentis Group">
+
+<div class="divider"></div>
+
+<h1>Thank You</h1>
+
+<p>Thank you for requesting an estimate.</p>
+
+<p>We typically respond within <strong>10–30 minutes during business hours.</strong></p>
+
+<p>Need a faster response?</p>
+
+<div class="cta">
+Call or text:  
+<a class="phone" href="tel:14695584056">(469) 558-4056</a>
+</div>
+
+</div>
+
+</div>
+
 </body>
 </html>
